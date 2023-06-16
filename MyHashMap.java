@@ -2,7 +2,7 @@ package HashMap;
 
     public class MyHashMap <K, V> {
         private static final int DEFAULT_CAPACITY = 16;
-        private Node[] table;
+        private Node<K, V>[] table;
         private int size;
 
         public MyHashMap() {
@@ -12,12 +12,12 @@ package HashMap;
 
         public void put(K key, V value) {
             int index = getIndex(key);
-            Node newNode = new Node(key, value);
+            Node<K, V> newNode = new Node(key, value);
 
             if (table[index] == null) {
                 table[index] = newNode;
             } else {
-                Node currentNode = table[index];
+                Node<K,V> currentNode = table[index];
                 while (currentNode.next != null) {
                     if (currentNode.key.equals(key)) {
                         currentNode.value = value;
@@ -36,8 +36,8 @@ package HashMap;
 
         public void remove(K key) {
             int index = getIndex(key);
-            Node currentNode = table[index];
-            Node prevNode = null;
+            Node<K, V> currentNode = table[index];
+            Node<K, V> prevNode = null;
 
             while (currentNode != null) {
                 if (currentNode.key.equals(key)) {
@@ -65,7 +65,7 @@ package HashMap;
 
         public Object get(K key) {
             int index = getIndex(key);
-            Node currentNode = table[index];
+            Node<K,V> currentNode = table[index];
 
             while (currentNode != null) {
                 if (currentNode.key.equals(key)) {
