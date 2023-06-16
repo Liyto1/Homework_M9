@@ -2,11 +2,11 @@ package Stack;
 
 import java.util.EmptyStackException;
 
-public class MyStack {
+public class MyStack <E>{
     private Node top;
     private int size;
 
-    public void push(Object value) {
+    public void push(E value) {
         Node newNode = new Node(value);
         newNode.next = top;
         top = newNode;
@@ -69,7 +69,7 @@ public class MyStack {
         Object value;
         Node next;
 
-        public Node(Object value) {
+        public Node(E value) {
             this.value = value;
             this.next = null;
         }
