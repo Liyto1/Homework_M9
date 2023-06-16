@@ -84,7 +84,7 @@ package HashMap;
             return Math.abs(key.hashCode()) % table.length;
         }
 
-        private static class Node {
+        private static class Node <K, V>{
             Object key;
             Object value;
             Node next;
