@@ -11,11 +11,11 @@ public class MyArrayList<E> {
         size = 0;
     }
 
-    private void add(E value) {
+    public void add(E value) {
         ensureCapacity(size + 1);
         elementData[size++] = value;
     }
-    private E remove(int index){
+    public E remove(int index){
         Objects.checkIndex(index, size);
         @SuppressWarnings("unchecked")
         E oldValue = (E) elementData[index];
@@ -24,18 +24,18 @@ public class MyArrayList<E> {
         return oldValue;
     }
 
-    private void clear(){
+    public void clear(){
         for (int i = 0; i < size; i++) {
             elementData[i] = null;
         }
         size = 0;
     }
 
-    private int size(){
+    public int size(){
         return size;
     }
 
-    private E get(int index){
+    public E get(int index){
         Objects.checkIndex(index, size);
         @SuppressWarnings("unchecked")
         E element = (E) elementData[index];
