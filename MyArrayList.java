@@ -4,10 +4,11 @@ import java.util.Objects;
 
 public class MyArrayList<E> {
     private int size;
+    private static final int DEFAULT_SIZE = 10;
     private Object[] elementData;
 
     public MyArrayList() {
-        elementData = new Object[10];
+        elementData = new Object[DEFAULT_SIZE];
         size = 0;
     }
 
@@ -25,7 +26,7 @@ public class MyArrayList<E> {
     }
 
     public void clear(){
-       elementData = new Object[10];
+       elementData = new Object[DEFAULT_SIZE];
         size = 0;
     }
 
