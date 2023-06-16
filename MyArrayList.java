@@ -25,7 +25,7 @@ public class MyArrayList<E> {
     }
 
     public void clear(){
-       elementData = new Object[10\];
+       elementData = new Object[10];
         size = 0;
     }
 
