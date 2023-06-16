@@ -9,7 +9,7 @@ public class MyLinkedList<E> {
     private Node tail;
     private int size;
 
-    public void add(Object value) {
+    public void add(E value) {
         Node newNode = new Node(value);
 
         if (size == 0) {
