@@ -3,12 +3,12 @@ package Queue;
 import java.util.NoSuchElementException;
 
 public class MyQueue <E>{
-    private Node head;
-    private Node tail;
+    private Node<E> head;
+    private Node<E> tail;
     private int size;
 
     public void add(E value) {
-        Node newNode = new Node(value);
+        Node<E> newNode = new Node(value);
         if (isEmpty()) {
             head = newNode;
         } else {
@@ -39,7 +39,7 @@ public class MyQueue <E>{
         if (isEmpty()) {
             throw new NoSuchElementException("Queue is empty");
         }
-        Object value = head.value;
+        E value = head.value;
         head = head.next;
         if (head == null) {
             tail = null;
@@ -52,9 +52,9 @@ public class MyQueue <E>{
         return size == 0;
     }
 
-    private static class Node {
-        Object value;
-        Node next;
+    private static class Node<E> {
+        E value;
+        Node<E> next;
 
         public Node(E value) {
             this.value = value;
