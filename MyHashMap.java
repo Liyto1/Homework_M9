@@ -34,7 +34,7 @@ package HashMap;
             size++;
         }
 
-        public void remove(Object key) {
+        public void remove(K key) {
             int index = getIndex(key);
             Node currentNode = table[index];
             Node prevNode = null;
@@ -63,7 +63,7 @@ package HashMap;
             return size;
         }
 
-        public Object get(Object key) {
+        public Object get(K key) {
             int index = getIndex(key);
             Node currentNode = table[index];
 
@@ -77,7 +77,7 @@ package HashMap;
             return null;
         }
 
-        private int getIndex(Object key) {
+        private int getIndex(K key) {
             if (key == null) {
                 return 0;
             }
@@ -89,7 +89,7 @@ package HashMap;
             Object value;
             Node next;
 
-            public Node(Object key, Object value) {
+            public Node(K key, V value) {
                 this.key = key;
                 this.value = value;
                 this.next = null;
