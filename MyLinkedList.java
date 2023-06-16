@@ -85,12 +85,12 @@ public class MyLinkedList<E> {
         return currentNode;
     }
 
-    private static class Node {
+    private static class Node <E> {
         Object value;
         Node prev;
         Node next;
 
-        public Node(Object value) {
+        public Node(E value) {
             this.value = value;
             this.prev = null;
             this.next = null;
