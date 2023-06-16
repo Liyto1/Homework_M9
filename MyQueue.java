@@ -2,12 +2,12 @@ package Queue;
 
 import java.util.NoSuchElementException;
 
-public class MyQueue {
+public class MyQueue <E>{
     private Node head;
     private Node tail;
     private int size;
 
-    public void add(Object value) {
+    public void add(E value) {
         Node newNode = new Node(value);
         if (isEmpty()) {
             head = newNode;
@@ -56,7 +56,7 @@ public class MyQueue {
         Object value;
         Node next;
 
-        public Node(Object value) {
+        public Node(E value) {
             this.value = value;
             this.next = null;
         }
