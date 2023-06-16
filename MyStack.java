@@ -3,11 +3,11 @@ package Stack;
 import java.util.EmptyStackException;
 
 public class MyStack <E>{
-    private Node top;
+    private Node<E> top;
     private int size;
 
     public void push(E value) {
-        Node newNode = new Node(value);
+        Node<E> newNode = new Node(value);
         newNode.next = top;
         top = newNode;
         size++;
@@ -20,8 +20,8 @@ public class MyStack <E>{
         if (index == 0) {
             top = top.next;
         } else {
-            Node previousNode = getNode(index - 1);
-            Node currentNode = previousNode.next;
+            Node<E> previousNode = getNode(index - 1);
+            Node<E> currentNode = previousNode.next;
             previousNode.next = currentNode.next;
         }
         size--;
@@ -47,14 +47,14 @@ public class MyStack <E>{
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        Object value = top.value;
+        E value = top.value;
         top = top.next;
         size--;
         return value;
     }
 
-    private Node getNode(int index) {
-        Node currentNode = top;
+    private Node<E> getNode(int index) {
+        Node<E> currentNode = top;
         for (int i = 0; i < index; i++) {
             currentNode = currentNode.next;
         }
@@ -66,8 +66,8 @@ public class MyStack <E>{
     }
 
     private static class Node <E> {
-        Object value;
-        Node next;
+        E value;
+        Node<E> next;
 
         public Node(E value) {
             this.value = value;
