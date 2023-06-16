@@ -1,6 +1,6 @@
 package HashMap;
 
-    public class MyHashMap {
+    public class MyHashMap <K, V> {
         private static final int DEFAULT_CAPACITY = 16;
         private Node[] table;
         private int size;
@@ -10,7 +10,7 @@ package HashMap;
             size = 0;
         }
 
-        public void put(Object key, Object value) {
+        public void put(K key, V value) {
             int index = getIndex(key);
             Node newNode = new Node(key, value);
 
