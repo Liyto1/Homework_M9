@@ -5,12 +5,12 @@ import java.util.Objects;
 
 public class MyLinkedList<E> {
 
-    private Node head;
-    private Node tail;
+    private Node<E> head;
+    private Node<E> tail;
     private int size;
 
     public void add(E value) {
-        Node newNode = new Node(value);
+        Node<E> newNode = new Node(value);
 
         if (size == 0) {
             head = newNode;
@@ -27,7 +27,7 @@ public class MyLinkedList<E> {
     public Object remove(int index) {
         Objects.checkIndex(index, size);
 
-        Node removedNode;
+        Node<E> removedNode;
 
         if (index == 0) {
             removedNode = head;
@@ -36,11 +36,11 @@ public class MyLinkedList<E> {
             removedNode = tail;
             tail = tail.prev;
         } else {
-            Node currentNode = getNode(index);
+            Node<E> currentNode = getNode(index);
             removedNode = currentNode;
 
-            Node prevNode = currentNode.prev;
-            Node nextNode = currentNode.next;
+            Node<E> prevNode = currentNode.prev;
+            Node<E> nextNode = currentNode.next;
 
             prevNode.next = nextNode;
             nextNode.prev = prevNode;
@@ -65,12 +65,12 @@ public class MyLinkedList<E> {
 
     public Object get(int index) {
         Objects.checkIndex(index, size);
-        Node node = getNode(index);
+        Node<E> node = getNode(index);
         return node.value;
     }
 
-    private Node getNode(int index) {
-        Node currentNode;
+    private Node<E> getNode(int index) {
+        Node<E> currentNode;
         if (index < size / 2) {
             currentNode = head;
             for (int i = 0; i < index; i++) {
@@ -87,8 +87,8 @@ public class MyLinkedList<E> {
 
     private static class Node <E> {
         E value;
-        Node prev;
-        Node next;
+        Node<E> prev;
+        Node<E> next;
 
         public Node(E value) {
             this.value = value;
