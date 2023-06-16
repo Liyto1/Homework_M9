@@ -85,9 +85,9 @@ package HashMap;
         }
 
         private static class Node <K, V>{
-            Object key;
-            Object value;
-            Node next;
+            K key;
+            V value;
+            Node<K, V> next;
 
             public Node(K key, V value) {
                 this.key = key;
