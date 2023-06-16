@@ -86,7 +86,7 @@ public class MyLinkedList<E> {
     }
 
     private static class Node <E> {
-        Object value;
+        E value;
         Node prev;
         Node next;
 
