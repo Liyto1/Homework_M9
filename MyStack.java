@@ -65,7 +65,7 @@ public class MyStack <E>{
         return size == 0;
     }
 
-    private static class Node {
+    private static class Node <E> {
         Object value;
         Node next;
 
